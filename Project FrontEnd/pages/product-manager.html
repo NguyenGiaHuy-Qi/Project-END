@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý bài học</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/product-management.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="main-header">
+      <h1>Bài học</h1>
+      <div class="actions">
+        <select id="filterSubject">
+          <option value="">Lọc theo môn học</option>
+        </select>
+        <input type="text" id="searchLesson" placeholder="Tìm kiếm bài học" />
+        <button id="addLessonBtn">Thêm mới bài học</button>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Tên bài học</th>
+          <th>Thời gian học</th>
+          <th>Trạng thái</th>
+          <th>Chức năng</th>
+        </tr>
+      </thead>
+      <tbody id="lessonTableBody">
+        <!-- Nội dung sẽ render bằng JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal Thêm/Sửa bài học -->
+  <div class="modal" id="lessonModal">
+    <div class="modal-content">
+      <h2 id="lessonModalTitle">Thêm bài học</h2>
+      <input type="text" id="lessonName" placeholder="Tên bài học">
+      <input type="number" id="lessonTime" placeholder="Thời gian học (phút)">
+      <select id="lessonStatus">
+        <option value="done">Đã hoàn thành</option>
+        <option value="pending">Chưa hoàn thành</option>
+      </select>
+      <div class="modal-actions">
+        <button id="saveLesson">Lưu</button>
+        <button id="cancelLesson">Hủy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal xác nhận xóa bài học -->
+  <div class="modal" id="deleteLessonModal">
+    <div class="modal-content">
+      <p>Bạn chắc chắn muốn xóa bài học này?</p>
+      <div class="modal-actions">
+        <button id="confirmDeleteLesson">Xóa</button>
+        <button id="cancelDeleteLesson">Hủy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/product-management.js"></script>
+</body>
+</html>
